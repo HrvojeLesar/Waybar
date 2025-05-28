@@ -219,7 +219,8 @@ void Workspace::update(const std::string& workspace_icon) {
      !this->isActive() && \
      !this->isPersistent() && \
      !this->isVisible() && \
-     !this->isSpecial()) {
+     !this->isSpecial() && \
+     this->isEmpty()) {
     // clang-format on
     // if activeOnly is true, hide if not active, persistent, visible or special
     m_button.hide();
