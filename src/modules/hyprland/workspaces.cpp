@@ -105,7 +105,8 @@ void Workspaces::createWorkspace(Json::Value const &workspace_data,
 
 void Workspaces::createWorkspacesToCreate() {
   for (const auto &[workspaceData, clientsData] : m_workspacesToCreate) {
-    createWorkspace(workspaceData, clientsData);
+    std::string workspaceName = workspaceData["name"].asString();
+    if (!Workspaces::isWorkspaceIgnored(workspaceName)) createWorkspace(workspaceData, clientsData);
   }
   if (!m_workspacesToCreate.empty()) {
     updateWindowCount();
