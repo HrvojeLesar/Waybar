@@ -226,7 +226,7 @@ void Workspaces::initializeWorkspaces() {
     loadPersistentWorkspacesFromConfig(clientsJson);
   }
   // load Hyprland's workspace rules
-  loadPersistentWorkspacesFromWorkspaceRules(clientsJson);
+  // loadPersistentWorkspacesFromWorkspaceRules(clientsJson);
 }
 
 bool isDoubleSpecial(std::string const& workspace_name) {
